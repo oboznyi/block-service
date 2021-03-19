@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Providers\**" />
+      <Content Remove="Providers\**" />
+      <EmbeddedResource Remove="Providers\**" />
+      <None Remove="Providers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.15.6" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="5.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+      <PackageReference Include="Serilog" Version="2.10.1-dev-01265" />
+      <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="4.0.0-dev-00051" />
+      <PackageReference Include="Serilog.Extensions.Logging" Version="3.0.2-dev-10284" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="3.2.0-dev-00264" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0-dev-00839" />
+      <PackageReference Include="Serilog.Sinks.File" Version="5.0.0-dev-00909" />
+      <PackageReference Include="Serilog.Sinks.Graylog" Version="2.2.2" />
+      <PackageReference Include="Swf.RabbitMQ.Abstractions" Version="4.6.1" />
+      <PackageReference Include="Swf.RabbitMQ.Core" Version="4.6.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Configuration\SenderConfiguration.cs">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Compile>
+      <Compile Update="DTO\BlockInfo.cs">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Compile>
+      <Compile Update="Models\BlockModel.cs">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Compile>
+      <Compile Update="Models\IBlockModel.cs">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Compile>
+      <Compile Update="Program.cs">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </Compile>
+      <Compile Update="Services\BlockPublisher.cs">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Compile>
+      <Compile Update="Services\BlockService.cs">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,29 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:52263/",
+      "sslPort": 44320
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Block.Sender": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RMQ_Connection": "amqp://guest:guest@127.0.0.1:5672/",
+        "DB_Connection": "Server=172.16.1.2;Port=5432;UserName=postgres;Password=123123;Database=blockdb;Minimum pool size=5;Integrated Security=true;",
+        "REDIS_Connection": "172.16.1.1:6379,syncTimeout=5000"
+      }
+    }
+  }
+}
